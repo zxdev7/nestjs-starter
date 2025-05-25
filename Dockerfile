@@ -26,7 +26,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --only=production --legacy-peer-deps
+RUN npm ci --legacy-peer-deps
 
 # Copy Prisma schema
 COPY prisma ./prisma/
