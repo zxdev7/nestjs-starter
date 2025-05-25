@@ -31,6 +31,9 @@ RUN npm ci --legacy-peer-deps
 # Copy Prisma schema
 COPY prisma ./prisma/
 
+# Copy tsconfig.json
+COPY tsconfig.json ./
+
 # Copy built application
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
